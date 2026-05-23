@@ -47,6 +47,7 @@
             "-Wno-tautological-overlap-compare",
             "-Wno-tautological-constant-out-of-range-compare",
             "-Wno-undefined-bool-conversion",
+            "-Wno-reorder-ctor",
             "-fPIC"
         ],
         "x86": {
