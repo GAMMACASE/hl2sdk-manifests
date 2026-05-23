@@ -48,6 +48,7 @@
             "-Wno-tautological-constant-out-of-range-compare",
             "-Wno-undefined-bool-conversion",
             "-Wno-reorder-ctor",
+            "-Wno-nontrivial-memcall",
             "-fPIC"
         ],
         "x86": {
