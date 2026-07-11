@@ -9,10 +9,12 @@
     },
     "platforms": {
         "windows": [
-            "x86"
+            "x86",
+            "x86_64"
         ],
         "linux": [
-            "x86"
+            "x86",
+            "x86_64"
         ]
     },
     "source2": false,
@@ -33,14 +35,19 @@
             "NO_HOOK_MALLOC",
             "NO_MALLOC_OVERRIDE"
         ],
+        "cxxflags": ["-std=c++17"],
         "x86": {
-            "postlink_libs": [
-                "lib/public/linux32/mathlib.a",
-                "lib/public/linux32/tier1.a"
-            ],
+            "cflags": ["-march=pentium4", "-march=core2", "-msse2", "-mfpmath=sse"],
             "dynamic_libs": [
-                "lib/public/linux32/libtier0.so",
-                "lib/public/linux32/libvstdlib.so"
+                "lib/public/linux/libtier0.so",
+                "lib/public/linux/libvstdlib.so"
+            ]
+        },
+        "x86_64": {
+            "cflags": ["-march=nocona", "-march=core2"],
+            "dynamic_libs": [
+                "lib/public/linux64/libtier0.so",
+                "lib/public/linux64/libvstdlib.so"
             ]
         },
         "uses_system_cxxlib": false
@@ -53,12 +60,17 @@
         }
     },
     "windows": {
+        "cxxflags": ["/std:c++17"],
         "x86": {
             "libs": [
-                "lib/public/mathlib.lib",
-                "lib/public/tier0.lib",
-                "lib/public/tier1.lib",
-                "lib/public/vstdlib.lib"
+                "lib/public/x86/tier0.lib",
+                "lib/public/x86/vstdlib.lib"
+            ]
+        },
+        "x86_64": {
+            "libs": [
+                "lib/public/x64/tier0.lib",
+                "lib/public/x64/vstdlib.lib"
             ]
         }
     }
