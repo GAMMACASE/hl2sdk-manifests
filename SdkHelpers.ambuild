@@ -261,6 +261,10 @@ class SdkHelpers(object):
         for cflag in SdkHelpers.getLists(sdk, 'cflags', cxx):
             cxx.cflags += [cflag]
 
+        # cxxflags
+        for cxxflag in SdkHelpers.getLists(sdk, 'cxxflags', cxx):
+            cxx.cxxflags += [cxxflag]
+
         if cxx.target.platform == 'linux':
             cxx.linkflags[0:0] = ['-lm']
 
